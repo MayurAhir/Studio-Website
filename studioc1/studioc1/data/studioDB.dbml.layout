@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="studioDB">
+  <DataContextMoniker Name="/studioDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b5663680-0230-4872-bcf2-a0886e4e4b50" absoluteBounds="2.875, 2.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/studioDBDataContext/reg1mst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc8defba-a451-4ba3-ab48-5e9e9b3b226a" absoluteBounds="2.89, 3.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a6db509-17db-408e-a0ad-4503f9036d0c" absoluteBounds="5.125, 3.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/studioDBDataContext/loginmst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e59a0695-464d-4a24-a7b3-13e6943ccd67" absoluteBounds="5.14, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 4.48159912109375); (5.125 : 4.48159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/reg1mst/reg1mst_loginmst" />
+      <nodes>
+        <classShapeMoniker Id="b5663680-0230-4872-bcf2-a0886e4e4b50" />
+        <classShapeMoniker Id="8a6db509-17db-408e-a0ad-4503f9036d0c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="170b8f0c-91b9-41a7-b4b8-8096c100bc88" absoluteBounds="2.875, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/studioDBDataContext/contactmst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eddaab62-1d30-4d7a-936c-143169807c2d" absoluteBounds="2.89, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e09f36d8-ce4a-4097-8329-ae62841e999c" absoluteBounds="7.375, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/studioDBDataContext/adminloginmst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f54ee11e-f2da-46f1-a3a1-fdefeac87781" absoluteBounds="7.39, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91419071-67e5-4a91-8d81-943f0d7cbc0a" absoluteBounds="0.5, 2.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/studioDBDataContext/feedbackmst1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6f72963-83c8-4192-bb1c-344f8b3c3a99" absoluteBounds="0.51500000000000012, 3.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7438e70d-1987-440d-82ff-e087e44370f0" absoluteBounds="0.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/studioDBDataContext/imagemst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e151861-d489-4dfa-b410-1fc5435c9733" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8cdc529-e883-4b4a-ad52-0fff3c14ef25" absoluteBounds="8.375, 3.375, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/studioDBDataContext/eventmast" />
+      <nestedChildShapes>
+        <elementListCompartment Id="689f24df-570d-41f1-8c7a-c9823dc78de2" absoluteBounds="8.39, 3.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 4.48159912109375); (7.41666666666667 : 4.48159912109375 : JumpStart); (7.58333333333333 : 4.48159912109375 : JumpEnd); (8.375 : 4.48159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/loginmst/loginmst_eventmast" />
+      <nodes>
+        <classShapeMoniker Id="8a6db509-17db-408e-a0ad-4503f9036d0c" />
+        <classShapeMoniker Id="f8cdc529-e883-4b4a-ad52-0fff3c14ef25" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e0db4e73-55f2-4b94-9623-1dcfb7d89efe" absoluteBounds="5.125, 0.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/studioDBDataContext/packagemst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4347c31c-ba26-44ec-a04d-f2f56c38ff03" absoluteBounds="5.14, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 2.65309895833333); (9.90625 : 2.65309895833333); (9.90625 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/packagemst/packagemst_eventmast" />
+      <nodes>
+        <classShapeMoniker Id="e0db4e73-55f2-4b94-9623-1dcfb7d89efe" />
+        <classShapeMoniker Id="f8cdc529-e883-4b4a-ad52-0fff3c14ef25" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fb71ee12-ba35-47d1-b84e-f2f7d957cd2a" absoluteBounds="4.375, 7.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/studioDBDataContext/orderbooking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="881220ba-c68a-4f1f-b012-85d3f3b0118c" absoluteBounds="4.39, 7.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 6.53285970052083); (7.58333333333333 : 6.53285970052083 : JumpStart); (7.41666666666667 : 6.53285970052083 : JumpEnd); (5 : 6.53285970052083); (5 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/eventmast/eventmast_orderbooking" />
+      <nodes>
+        <classShapeMoniker Id="f8cdc529-e883-4b4a-ad52-0fff3c14ef25" />
+        <classShapeMoniker Id="fb71ee12-ba35-47d1-b84e-f2f7d957cd2a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 3.16356307752404); (7.5 : 3.53856307752404); (7.5 : 6.875); (6.75 : 6.875); (6.375 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/packagemst/packagemst_orderbooking" />
+      <nodes>
+        <classShapeMoniker Id="e0db4e73-55f2-4b94-9623-1dcfb7d89efe" />
+        <classShapeMoniker Id="fb71ee12-ba35-47d1-b84e-f2f7d957cd2a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 5.93430826822917); (4.625 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/studioDBDataContext/reg1mst/reg1mst_orderbooking" />
+      <nodes>
+        <classShapeMoniker Id="b5663680-0230-4872-bcf2-a0886e4e4b50" />
+        <classShapeMoniker Id="fb71ee12-ba35-47d1-b84e-f2f7d957cd2a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a369417d-fc60-4e7f-bb64-aaac5158d85a" absoluteBounds="2, 7.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/studioDBDataContext/eventsubtype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61c98b1c-5383-4ae8-bfa3-a06b16fd65e7" absoluteBounds="2.015, 8.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67221080-03c1-485b-a147-3a7b9078b8d1" absoluteBounds="0.5, 5.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/studioDBDataContext/eventtype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e2e8ce3-1769-4c37-bdad-5f177ca2a895" absoluteBounds="0.51499999999999968, 5.8350000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

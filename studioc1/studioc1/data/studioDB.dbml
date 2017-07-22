@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="studiocomplete" Class="studioDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=MAYUR-PC;Initial Catalog=studiocomplete;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="studiocompleteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.reg1mst" Member="reg1msts">
+    <Type Name="reg1mst">
+      <Column Name="RegistrationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dateofbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="useraddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="couuntry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="states" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pincode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="reg1mst_loginmst" Member="loginmsts" ThisKey="RegistrationId" OtherKey="RegistrationId" Type="loginmst" />
+      <Association Name="reg1mst_orderbooking" Member="orderbookings" ThisKey="RegistrationId" OtherKey="RegistrationId" Type="orderbooking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.loginmst" Member="loginmsts">
+    <Type Name="loginmst">
+      <Column Name="loginid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegistrationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="passwords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="loginmst_eventmast" Member="eventmasts" ThisKey="loginid" OtherKey="loginid" Type="eventmast" />
+      <Association Name="reg1mst_loginmst" Member="reg1mst" ThisKey="RegistrationId" OtherKey="RegistrationId" Type="reg1mst" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.contactmst" Member="contactmsts">
+    <Type Name="contactmst">
+      <Column Name="contactid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="messages" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.adminloginmst" Member="adminloginmsts">
+    <Type Name="adminloginmst">
+      <Column Name="adminid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="passwords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.feedbackmst1" Member="feedbackmst1s">
+    <Type Name="feedbackmst1">
+      <Column Name="feedbackid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="feedbacktext" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.imagemst" Member="imagemsts">
+    <Type Name="imagemst">
+      <Column Name="imageid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imagename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isdefault" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.eventmast" Member="eventmasts">
+    <Type Name="eventmast">
+      <Column Name="eventid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="packageid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loginid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="eventname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="place" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="state1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="statuse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="eventmast_orderbooking" Member="orderbookings" ThisKey="eventid" OtherKey="eventid" Type="orderbooking" />
+      <Association Name="loginmst_eventmast" Member="loginmst" ThisKey="loginid" OtherKey="loginid" Type="loginmst" IsForeignKey="true" />
+      <Association Name="packagemst_eventmast" Member="packagemst" ThisKey="packageid" OtherKey="packageid" Type="packagemst" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.packagemst" Member="packagemsts">
+    <Type Name="packagemst">
+      <Column Name="packageid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="packagetype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="packagemst_eventmast" Member="eventmasts" ThisKey="packageid" OtherKey="packageid" Type="eventmast" />
+      <Association Name="packagemst_orderbooking" Member="orderbookings" ThisKey="packageid" OtherKey="packageid" Type="orderbooking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orderbooking" Member="orderbookings">
+    <Type Name="orderbooking">
+      <Column Name="obid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eventid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="packageid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegistrationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="place" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="currentdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="eventmast_orderbooking" Member="eventmast" ThisKey="eventid" OtherKey="eventid" Type="eventmast" IsForeignKey="true" />
+      <Association Name="packagemst_orderbooking" Member="packagemst" ThisKey="packageid" OtherKey="packageid" Type="packagemst" IsForeignKey="true" />
+      <Association Name="reg1mst_orderbooking" Member="reg1mst" ThisKey="RegistrationId" OtherKey="RegistrationId" Type="reg1mst" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.eventsubtype" Member="eventsubtypes">
+    <Type Name="eventsubtype">
+      <Column Name="stypeid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="etypeid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stypename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stypeimage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="insertdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updatedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.eventtype" Member="eventtypes">
+    <Type Name="eventtype">
+      <Column Name="etypeid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eventname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="eventimage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="insertdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updatedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.login_select" Method="login_select">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="login_selectResult">
+      <Column Name="loginid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.feedback_insert" Method="feedback_insert">
+    <Parameter Name="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="feedbacktext" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Isactive" Parameter="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.contact_insert" Method="contact_insert">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="messages" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alogin" Method="alogin">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="aloginResult">
+      <Column Name="adminid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="passwords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.passwordchange" Method="passwordchange">
+    <Parameter Name="adminid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.afeedback_select" Method="afeedback_select">
+    <ElementType Name="afeedback_selectResult">
+      <Column Name="feedbackid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="feedbacktext" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.feedbackup" Method="feedbackup">
+    <Parameter Name="feedbackid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="feedbacktext" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selectcontact" Method="selectcontact">
+    <ElementType Name="selectcontactResult">
+      <Column Name="contactid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="messages" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectfeedback" Method="selectfeedback">
+    <ElementType Name="selectfeedbackResult">
+      <Column Name="feedbackid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="feedbacktext" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectimage" Method="selectimage">
+    <ElementType Name="selectimageResult">
+      <Column Name="imageid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="imagename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isdefault" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.registration1_insert" Method="registration1_insert">
+    <Parameter Name="firstname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lastname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="useraddress" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="couuntry" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="states" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pincode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="packagetype" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateevent" Method="updateevent">
+    <Parameter Name="eventid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="eventname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="place" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="country" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="statuse" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateimage" Method="updateimage">
+    <Parameter Name="imageid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="imagename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Isactive" Parameter="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertimage" Method="insertimage">
+    <Parameter Name="imagename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Isactive" Parameter="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.packageinsert" Method="packageinsert">
+    <Parameter Name="packagetype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.packgedelete" Method="packgedelete">
+    <Parameter Name="packageid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selectpackage" Method="selectpackage">
+    <ElementType Name="selectpackageResult">
+      <Column Name="packageid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="packagetype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertevnt" Method="insertevnt">
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="eventname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="place" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="country" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="statuse" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eventbooking" Method="eventbooking">
+    <Parameter Name="eventname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="place" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="country" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selectoreder" Method="selectoreder">
+    <ElementType Name="selectorederResult">
+      <Column Name="obid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eventid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="packageid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegistrationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="place" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="currentdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.enamesp" Method="enamesp">
+    <ElementType Name="enamespResult">
+      <Column Name="eventname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eventsub_sp" Method="eventsub_sp">
+    <Parameter Name="etypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stypename" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stypeimage" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.subeventselect_sp" Method="subeventselect_sp">
+    <ElementType Name="subeventselect_spResult">
+      <Column Name="stypeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="etypeid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stypename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stypeimage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="insertdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updatedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.update_subevent" Method="update_subevent">
+    <Parameter Name="stypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stypename" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stypeimage" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.selecteventmain_sp" Method="selecteventmain_sp">
+    <ElementType Name="selecteventmain_spResult">
+      <Column Name="etypeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eventname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="eventimage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="insertdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updatedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eventdynamic" Method="eventdynamic">
+    <Parameter Name="etypeid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="eventdynamicResult">
+      <Column Name="stypename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stypeimage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.changepassuser1" Method="changepassuser1">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="changepassuser1Result">
+      <Column Name="loginid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistrationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="passwords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.changepassuser2" Method="changepassuser2">
+    <Parameter Name="loginid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="passwords" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.packageupdate" Method="packageupdate">
+    <Parameter Name="packageid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="packagetype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.packageimg_sp" Method="packageimg_sp">
+    <Parameter Name="packageid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="packageimg_spResult">
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eventbookingprice_sp" Method="eventbookingprice_sp">
+    <ElementType Name="eventbookingprice_spResult">
+      <Column Name="packageid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="packagetype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eventbookingsp" Method="eventbookingsp">
+    <Parameter Name="packageid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="address1" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="place" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="contactno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pricedynamic_sp" Method="pricedynamic_sp">
+    <Parameter Name="packageid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pricedynamic_spResult">
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
